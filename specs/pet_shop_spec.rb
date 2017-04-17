@@ -158,25 +158,26 @@ class TestPetShop < Minitest::Test
   # end
 
   # does not need to be an array
-  def test_find_pet_by_name__returns_pet
-    pet = find_pet_by_name(@pet_shop, "Arthur")
-    assert_equal("Arthur", pet[:name])
-  end
-
-  def test_find_pet_by_name__returns_nil
-    pet = find_pet_by_name(@pet_shop, "Fred")
+  # def test_find_pet_by_name__returns_pet
+  #   pet = find_pet_by_name(@pet_shop, "Arthur")
+  #   assert_equal("Arthur", pet[:name])
+  # end
+  #
+  # def test_find_pet_by_name__returns_nil
+  #   pet = find_pet_by_name(@pet_shop, "Fred")
+  #   assert_equal(nil, pet)
+  # end
+  #
+  # def test_find_pet_by_name__return_different_pet
+  #   pet = find_pet_by_name(@pet_shop, "Merlin")
+  #   assert_equal("Merlin", pet[:name])
+  # end
+  def test_remove_pet_by_name
+    remove_pet_by_name(@pet_shop, "Arthur")
+    pet = find_pet_by_name(@pet_shop,"Arthur")
     assert_equal(nil, pet)
   end
 
-  def test_find_pet_by_name__return_different_pet
-    pet = find_pet_by_name(@pet_shop, "Merlin")
-    assert_equal("Merlin", pet[:name])
-  end
-  # def test_remove_pet_by_name
-  #   remove_pet_by_name(@pet_shop, "Arthur")
-  #   pet = find_pet_by_name(@pet_shop,"Arthur")
-  #   assert_equal(nil, pet)
-  # end
 
   # def test_add_pet_to_stock
   #   add_pet_to_stock(@pet_shop, @new_pet)
